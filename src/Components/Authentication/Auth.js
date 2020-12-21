@@ -14,6 +14,16 @@ function Auth() {
 
     const loginToApp = (e) => {
         e.preventDefault();
+        auth.signInWithEmailAndPassword(email, password)
+            .then(userAuth => {
+                dispatch(login({
+                    email: userAuth.user.email,
+                    uid: userAuth.user.uid,
+                    displayName: userAuth.user.displayName,
+                    photoUrl: userAuth.user.photoUrl,
+                }));
+            })
+            .catch(error => alert(error));
      };
     const register = () => { 
         if (!name) {
@@ -66,7 +76,7 @@ function Auth() {
                     type="password"
                     onChange={ e => setPassword(e.target.value) }
                 />
-                <button>Sign In</button>
+                <button onClick={loginToApp}>Sign In</button>
             </form>
             <p>
                 Not a Memeber?<span className="auth__register" onClick={register}>Register Now</span>

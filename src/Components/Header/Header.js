@@ -8,10 +8,11 @@ import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
 import HeaderOptions from './HeaderOptions/HeaderOptions';
-import { Avatar } from '@material-ui/core';
+
 
 
 function Header() {
+
     return (
         <div className="header">
             {/* <h1>This is the header</h1> */}
@@ -22,7 +23,7 @@ function Header() {
                 />
                 <div className="header__search">
                     <SearchIcon />
-                    <input type="text" />
+                    <input placeholder="Search" type="text" />
                 </div>
             </div>
             <div className="header__right">

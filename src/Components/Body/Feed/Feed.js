@@ -25,7 +25,7 @@ function Feed() {
 
     const sendPost = (e) => {
         e.preventDefault();
-        db.collection("posts").orderBy("timestamp", "desc").add({
+        db.collection("posts").orderBy("timestamp", "asc").add({
             name: 'Maharsh',
             description: 'Seeking Full-time Opportunities in Software Development || React Lover',
             message: input,
